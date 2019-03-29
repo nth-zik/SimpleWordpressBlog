@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Locations\n"
+"POT-Creation-Date: 2016-06-01 10:14+0530\n"
+"PO-Revision-Date: 2016-06-01 10:14+0530\n"
+"Last-Translator: \n"
+"Language-Team: Templatic <upendra@templatic.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: post_templates.php:42
+#, php-format
+msgid ""
+"Templatic Post Detail Plugin is activated now, <a href='%s'>click here</a> "
+"to get started. For detailed information, refer readme.txt and screenshot "
+"contain in plugin folder."
+msgstr ""
+
+#: post_templates.php:164
+msgid "Post Detail Template"
+msgstr ""
+
+#: post_templates.php:177
+msgid "Post Template"
+msgstr ""
+
+#: post_templates.php:179
+msgid "Default"
+msgstr ""
+
+#: post_templates.php:182
+msgid ""
+"Some themes have custom templates you can use for single posts that might "
+"have additional features or custom layouts.If so,you'll see them above."
+msgstr ""

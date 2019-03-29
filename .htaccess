@@ -1,0 +1,76 @@
+# BEGIN WP Hide & Security Enhancer
+<IfModule mod_rewrite.c> 
+RewriteEngine On 
+RewriteBase /w/ 
+#WriteCheckString:1521182754_2711
+RewriteRule .* - [E=HTTP_MOD_REWRITE:On]
+
+RewriteCond "%{DOCUMENT_ROOT}/w/wp-content/cache/wph/%{HTTP_HOST}%{REQUEST_URI}" -f
+RewriteRule .* "/w/wp-content/cache/wph/%{HTTP_HOST}%{REQUEST_URI}" [L]
+
+RewriteRule ^coolbird_template/theme/coolbird_template/style.css /w/wp-content/plugins/wp-hide-security-enhancer/router/file-process.php?action=style-clean&file_path=/w/wp-content/themes/colormag/style.css&replacement_path=/coolbird_template/theme/coolbird_template/style.css [L,QSA]
+
+RewriteRule ^coolbird_template/theme/coolbird_template/style.css /w/wp-content/themes/colormag/style.css [L,QSA]
+
+RewriteRule ^coolbird_template/theme/(.+) /w/wp-content/themes/colormag/$1 [L,QSA]
+
+RewriteRule ^plug/coolbird_form/(.+) /w/wp-content/plugins/everest-forms/$1 [L,QSA]
+RewriteRule ^plug/coolbird_demo/(.+) /w/wp-content/plugins/themegrill-demo-importer/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in.*$ [NC]
+RewriteRule ^wp-includes(.+) /w/index.php?wph-throw-404 [L]
+
+RewriteRule ^inc/(.+) /w/wp-includes/$1 [L,QSA]
+
+RewriteRule ^uploads/(.+) /w/wp-content/uploads/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-activate.php /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-signup.php /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^readme.html /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^license.txt /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-cron.php /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^xmlrpc.php /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-register.php /w/index.php?wph-throw-404 [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} !wp-activate.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-cron.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-signup.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-register.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-comments-post.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-login.php [NC]
+RewriteRule ^wp-([a-z-])+.php /w/index.php?wph-throw-404 [L]
+
+RewriteRule ^comments.php /w/wp-comments-post.php [L,QSA]
+
+RewriteRule ^content/(.+) /w/wp-content/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in.*$ [NC]
+RewriteRule ^wp-content(.+) /w/index.php?wph-throw-404 [L]
+
+RewriteRule ^dangnhap.php(.*) /w/wp-login.php$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} /w/vungcam$
+RewriteRule ^(.*)$ /w/vungcam/ [R=301,L]
+RewriteRule ^vungcam(.*) /w/wp-admin$1 [L,QSA]
+</IfModule> 
+
+# END WP Hide & Security Enhancer
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /w/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /w/index.php [L]
+</IfModule>
+
+# END WordPress
